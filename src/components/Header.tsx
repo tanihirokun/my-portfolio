@@ -21,8 +21,8 @@ export const Header:VFC = memo(() => {
   const isDark = colorMode === "dark";
 
   return (
-    <VStack p={5}>
-      <Flex as="header" w="100%" align={'center'}>
+    <VStack p={5} as="header">
+      <Flex  w="100%" align={'center'}>
         <Heading
           as="h1"
           ml={{base: 0, md: 2}}
