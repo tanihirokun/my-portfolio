@@ -1,5 +1,5 @@
-export const Profile = () => {
-  return (
-    <div>tanigawa</div>
-  )
-}
+import { memo, VFC } from "react";
+
+export const Profile: VFC = memo(() => {
+  return <div>tanigawa</div>;
+});

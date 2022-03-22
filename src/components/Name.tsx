@@ -5,33 +5,44 @@ import {
   useMediaQuery,
   Text,
   Image,
-  Center,
+  Heading,
   Flex,
+  Button,
 } from "@chakra-ui/react";
 import { memo, VFC } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Name: VFC = memo(() => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
   // 文字列を入れる左右に注意
   const [notSmall] = useMediaQuery("(min-width: 800px)");
+  const navigate = useNavigate();
+
+  const onClickProfile = () => navigate('/profile')
 
   return (
-    <VStack p={5}>
+    <VStack p={5} as="section">
       <Flex
         direction={notSmall ? "row" : "column"}
         p={notSmall ? 24 : 0}
         w="100%"
         justifyContent={"center"}
       >
-        <Box mt={notSmall ? 0 : 8} mx={notSmall ? 0 : 'auto'} alignSelf='center' w={notSmall ? "40%" : "100%"}>
-          <Text
+        <Box
+          mt={notSmall ? 0 : 8}
+          mx={notSmall ? 0 : "auto"}
+          alignSelf="center"
+          w={notSmall ? "40%" : "100%"}
+        >
+          <Heading
+            as="h2"
             fontSize="4xl"
             fontWeight="semibold"
             color={isDark ? "gray.200" : "gray.600"}
           >
             Tanigawa Hiroaki
-          </Text>
+          </Heading>
           <Text
             fontSize={{ base: "md", sm: "xl" }}
             fontWeight="semibold"
@@ -45,7 +56,8 @@ export const Name: VFC = memo(() => {
             color={isDark ? "gray.200" : "gray.600"}
             mt={2}
           >
-            HTML / CSS / JavaScript /React / Firebase /chakra ui / photoshop / illustrator
+            HTML / CSS / JavaScript /React / Firebase /chakra ui / photoshop /
+            illustrator
           </Text>
         </Box>
         <Image
@@ -57,10 +69,28 @@ export const Name: VFC = memo(() => {
           alignSelf="center"
           shadow="lg"
           mt={notSmall ? 0 : 8}
-          mb={notSmall ? 0 : 12}
+          mb={notSmall ? 0 : 10}
           ml={notSmall ? 10 : 0}
         />
       </Flex>
+      <Box >
+        <Button
+          bgGradient='linear(to-r, gray.600, gray.400)'
+          _hover={{
+            bgGradient: 'linear(to-r, gray.400, gray.600)',
+          }}
+          color="white"
+          w="30vw"
+          maxW='200px'
+          fontSize={{ base: "md", sm: "xl" }}
+          borderRadius="10px"
+          shadow="lg"
+          onClick={onClickProfile}
+        >
+          More
+        </Button>
+
+      </Box>
     </VStack>
   );
 });
