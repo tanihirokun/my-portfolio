@@ -9,7 +9,7 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
-import { memo, VFC } from "react";
+import { memo, useCallback, VFC } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Name: VFC = memo(() => {
@@ -19,7 +19,7 @@ export const Name: VFC = memo(() => {
   const [notSmall] = useMediaQuery("(min-width: 800px)");
   const navigate = useNavigate();
 
-  const onClickProfile = () => navigate('/profile')
+  const onClickProfile = useCallback(() => navigate('/profile'),[navigate]);
 
   return (
     <VStack p={5} as="section">
