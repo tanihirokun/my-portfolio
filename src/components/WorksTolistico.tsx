@@ -2,7 +2,7 @@ import { useColorMode } from "@chakra-ui/react";
 import { memo, VFC } from "react";
 import { Header } from "./Header";
 
-export const Profile: VFC = memo(() => {
+export const WorksTolistico: VFC = memo(() => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 

@@ -1,11 +1,11 @@
 import { Button, Heading, VStack } from "@chakra-ui/react";
-import { memo, VFC } from "react";
+import { memo, useCallback, VFC } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Page404: VFC = memo(() => {
   const navigate = useNavigate();
 
-  const onClickHome = () => navigate('/')
+  const onClickHome = useCallback(() => navigate('/'),[navigate])
 
   return (
     <VStack p={10}>
