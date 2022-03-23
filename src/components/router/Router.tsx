@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import App from "../../App";
 import { Page404 } from "../Page404";
-import { Profile } from "../Profile";
+import { Profile } from "../profile/Profile";
 import { WorksTolistico } from "../WorksTolistico";
 
 export const Router: VFC = memo(() => {

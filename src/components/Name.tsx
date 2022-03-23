@@ -8,6 +8,7 @@ import {
   Heading,
   Flex,
   Button,
+  Tooltip,
 } from "@chakra-ui/react";
 import { memo, useCallback, VFC } from "react";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +20,7 @@ export const Name: VFC = memo(() => {
   const [notSmall] = useMediaQuery("(min-width: 800px)");
   const navigate = useNavigate();
 
-  const onClickProfile = useCallback(() => navigate('/profile'),[navigate]);
+  const onClickProfile = useCallback(() => navigate("/profile"), [navigate]);
 
   return (
     <VStack p={5} as="section">
@@ -73,23 +74,25 @@ export const Name: VFC = memo(() => {
           ml={notSmall ? 10 : 0}
         />
       </Flex>
-      <Box >
-        <Button
-          bgGradient='linear(to-r, gray.600, gray.400)'
-          _hover={{
-            bgGradient: 'linear(to-r, gray.400, gray.600)',
-          }}
-          color="white"
-          w="30vw"
-          maxW='200px'
-          fontSize={{ base: "md", sm: "xl" }}
-          borderRadius="10px"
-          shadow="lg"
-          onClick={onClickProfile}
-        >
-          More
-        </Button>
-
+      <Box>
+        <Tooltip label="谷川を詳しく知りたい方はこちらから" bg="gray.500" fontSize='md' padding={2}>
+          <Button
+            bgGradient="linear(to-r, gray.600, gray.400)"
+            _hover={{
+              bgGradient: "linear(to-r, gray.400, gray.600)",
+            }}
+            color="white"
+            h='50px'
+            w="30vw"
+            maxW="200px"
+            fontSize={{ base: "lg", sm: "xl" }}
+            borderRadius="10px"
+            shadow="lg"
+            onClick={onClickProfile}
+          >
+            More
+          </Button>
+        </Tooltip>
       </Box>
     </VStack>
   );
