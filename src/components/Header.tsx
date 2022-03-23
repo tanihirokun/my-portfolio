@@ -32,7 +32,7 @@ export const Header:VFC = memo(() => {
     window.open('https://github.com/tanihirokun', '_blank')}
 
   return (
-    <VStack p={5} as="header">
+    <VStack p={5} as="header"  w="100%">
       <Flex  w="100%" align={'center'}>
         <Box as="a" _hover={{cursor: 'pointer'}} onClick={onClickHome}>
           <Heading
@@ -67,7 +67,7 @@ export const Header:VFC = memo(() => {
           onClick={onClickGithub}
         />
         <IconButton
-          ml={{base: 6, md: 8}}
+          ml={{base: 5, md: 8}}
           aria-label="ダークモードボタン"
           icon={isDark ? <FaSun /> : <FaMoon />}
           isRound
