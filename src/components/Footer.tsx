@@ -11,15 +11,12 @@ export const Footer: VFC = memo(() => {
   const onClickHome = useCallback(() => navigate('/'),[navigate])
 
   return(
-   <VStack as='footer' h='60px' w='100%' p='18px'>
+   <VStack as='footer' h='60px' w='100%' p='20px' bg={isDark ? "gray.600" : "gray.50"}>
      <Flex as="a" _hover={{cursor: 'pointer'}} onClick={onClickHome} >
           <Heading
-            as="h1"
-            ml={{base: 0, md: 2}}
-            size="sm"
+            size="xs"
             fontWeight="semibold"
-            color={isDark ? "gray.200" : "gray.500"}
-
+            color={isDark ? "gray.200" : "gray.400"}
           >
             &copy; Tanigawa's Portfolio Site
           </Heading>
