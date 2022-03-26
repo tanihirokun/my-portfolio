@@ -1,20 +1,21 @@
 import React from 'react'
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 
 import Theme from './theme/Theme'
 import { BrowserRouter } from 'react-router-dom';
 import { Router } from './components/router/Router';
+import { ScrollToTop } from './components/router/ScrollToTop';
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={Theme}>
       <ColorModeScript initialColorMode='light'></ColorModeScript>
       <BrowserRouter>
-        <Router/>
+        <ScrollToTop />
+         <Router/>
       </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>,

@@ -33,7 +33,7 @@ export const Header:VFC = memo(() => {
 
   return (
     <VStack p={5} as="header"  w="100%">
-      <Flex  w="100%" align={'center'}>
+      <Flex  w="100%" align={'center'} maxW='1400px'>
         <Box as="a" _hover={{cursor: 'pointer'}} onClick={onClickHome}>
           <Heading
             as="h1"
