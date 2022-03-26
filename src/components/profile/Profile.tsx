@@ -28,7 +28,7 @@ export const Profile: VFC = memo(() => {
       {console.log('プロフィール読み込み')}
       <Header />
       <Box p={8} as='section'>
-        <Heading color={isDark ? "gray.200" : "gray.600"}>About Me</Heading>
+        <Heading color={isDark ? "gray.200" : "gray.600"} pl={notSmall ? '8vw' : 0}  pt={notSmall ? '15px' : 0}>About Me</Heading>
         <Flex direction={notSmall ? "row" : "column"} justify="center" alignItems='center' mt={notSmall ? '60px' : '10'}>
           <Flex justify="center">
             <Image
@@ -43,12 +43,13 @@ export const Profile: VFC = memo(() => {
               mb={notSmall ? '0' : '10'}
             />
           </Flex>
+          {/* 箇条書きリスト　ProfileListから */}
           <VStack maxW='500px'>
             <List spacing={5}>
               {ProfileList.map((list) => {
                 return (
                 <ListItem fontSize='lg' fontWeight='semibold' color={isDark ? "gray.200" : "gray.600"} key={list.key}>
-                  <ListIcon as={list.icon} color="green.500"/>
+                  <ListIcon as={list.icon} color="gray.400"/>
                   {list.text}
                 </ListItem>
                 )
@@ -57,6 +58,7 @@ export const Profile: VFC = memo(() => {
           </VStack>
         </Flex>
       </Box>
+      {/* その下の読みこみ */}
       <ProfileAppeal/>
       <ProfileSkill/>
     </div>

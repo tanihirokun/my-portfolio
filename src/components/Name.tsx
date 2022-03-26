@@ -8,7 +8,6 @@ import {
   Heading,
   Flex,
   Button,
-  Tooltip,
 } from "@chakra-ui/react";
 import { memo, useCallback, VFC } from "react";
 import { useNavigate } from "react-router-dom";
@@ -70,30 +69,26 @@ export const Name: VFC = memo(() => {
           alignSelf="center"
           shadow="lg"
           mt={notSmall ? 0 : 8}
-          mb={notSmall ? 0 : 10}
+          mb={notSmall ? 0 : 12}
           ml={notSmall ? 10 : 0}
         />
       </Flex>
-      <Box>
-        <Tooltip label="谷川を詳しく知りたい方はこちらから" bg="gray.500" fontSize='md' padding={2}>
-          <Button
-            bgGradient="linear(to-r, gray.600, gray.400)"
-            _hover={{
-              bgGradient: "linear(to-r, gray.400, gray.600)",
-            }}
-            color="white"
-            h='50px'
-            w="30vw"
-            maxW="200px"
-            fontSize={{ base: "lg", sm: "xl" }}
-            borderRadius="10px"
-            shadow="lg"
-            onClick={onClickProfile}
-          >
-            More
-          </Button>
-        </Tooltip>
-      </Box>
+      <Button
+        bgGradient="linear(to-r, gray.600, gray.400)"
+        _hover={{
+          bgGradient: "linear(to-r, gray.400, gray.600)",
+        }}
+        color="white"
+        h="50px"
+        w="40vw"
+        maxW="200px"
+        fontSize={{ base: "lg", sm: "xl" }}
+        borderRadius="10px"
+        shadow="lg"
+        onClick={onClickProfile}
+      >
+        More
+      </Button>
     </VStack>
   );
 });
