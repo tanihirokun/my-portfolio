@@ -6,14 +6,12 @@ import {
   AccordionPanel,
   Box,
   useColorMode,
-  useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
 import { memo, VFC } from "react";
 import { ProfileAppealMessage } from "./ProfileAppealMessage";
 
 export const ProfileAppeal: VFC = memo(() => {
-  const [notSmall] = useMediaQuery("(min-width: 800px)");
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
@@ -38,7 +36,7 @@ export const ProfileAppeal: VFC = memo(() => {
                 </Box>
                 <AccordionIcon color={isDark ? "gray.200" : "gray.600"} />
               </AccordionButton>
-              <AccordionPanel pb={4}>
+              <AccordionPanel p={5} color={isDark ? "gray.200" : "gray.600"} >
                 {message.text}
               </AccordionPanel>
             </AccordionItem>

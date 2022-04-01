@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import App from "../../App";
 import { Page404 } from "../Page404";
 import { Profile } from "../profile/Profile";
-import { WorksTolistico } from "../WorksTolistico";
+import { WorksTolistico } from "../production/WorksTolistico";
 
 export const Router: VFC = memo(() => {
   return (

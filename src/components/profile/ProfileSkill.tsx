@@ -15,7 +15,7 @@ export const ProfileSkill: VFC = memo(() => {
   const isDark = colorMode === "dark";
 
   return (
-    <VStack as="section" w="100%" maxW="700px" mx="auto" mt="20" px={5}>
+    <VStack as="section" w="100%" maxW="700px" mx="auto" mt="20" mb="20" px={5}>
       <Heading fontWeight="semibold" color={isDark ? "gray.200" : "gray.600"} mb={5}>
         Skill
       </Heading>
