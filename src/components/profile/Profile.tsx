@@ -10,7 +10,9 @@ import {
   useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
-import { memo, VFC } from "react";
+import { memo, useCallback, VFC } from "react";
+import { useNavigate } from "react-router-dom";
+import { Footer } from "../Footer";
 
 import { Header } from "../Header";
 import { ProfileAppeal } from "./ProfileAppeal";
@@ -22,10 +24,14 @@ export const Profile: VFC = memo(() => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
+  const navigate = useNavigate();
+
+  const onClickHome = useCallback(() => navigate("/"), [navigate]);
+  const onClickAbout = useCallback(() => navigate("/profile"), [navigate]);
+
   // プロフィール画面の画像とリスト
   return (
-    <div>
-      {console.log('プロフィール読み込み')}
+    <>
       <Header />
       <Box p={8} as='section'>
         <Heading color={isDark ? "gray.200" : "gray.600"} pl={notSmall ? '8vw' : 0}  pt={notSmall ? '15px' : 0}>About Me</Heading>
@@ -61,6 +67,7 @@ export const Profile: VFC = memo(() => {
       {/* その下の読みこみ */}
       <ProfileAppeal/>
       <ProfileSkill/>
-    </div>
+      <Footer onClickHome={onClickHome} text={'Home'} hrefWork={'/#work'} hrefProfile={'#'}/>
+    </>
   );
 });
